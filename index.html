@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="qr-section" id="qrcode">
+            <!-- QR code will be generated here -->
+        </div>
+        <div class="form-section">
+            <h2>Enter Details</h2>
+            <div id="form-fields">
+                <div class="field-group">
+                    <input type="text" id="name" placeholder="Enter your name" required>
+                    <button type="button" class="remove-btn" onclick="removeField(this)">−</button>
+                </div>
+                <div class="field-group">
+                    <input type="number" id="age" placeholder="Enter your age" required>
+                    <button type="button" class="remove-btn" onclick="removeField(this)">−</button>
+                </div>
+                <div class="field-group">
+                    <input type="text" id="department" placeholder="Enter your department" required>
+                    <button type="button" class="remove-btn" onclick="removeField(this)">−</button>
+                </div>
+                <div class="field-group">
+                    <input type="email" id="email" placeholder="Enter your email (optional)">
+                    <button type="button" class="remove-btn" onclick="removeField(this)">−</button>
+                </div>
+                <div class="field-group">
+                    <input type="tel" id="phone" placeholder="Enter your phone number (optional)">
+                    <button type="button" class="remove-btn" onclick="removeField(this)">−</button>
+                </div>
+            </div>
+            <label for="color">Choose QR code color:</label>
+            <input type="color" id="color" value="#000000">
+            <label for="size">Choose QR code size:</label>
+            <select id="size">
+                <option value="350">350x350</option>
+                <option value="300">300x300</option>
+                <option value="250">250x250</option>
+            </select>
+            <label for="errorCorrectionLevel">Choose error correction level:</label>
+            <select id="errorCorrectionLevel">
+                <option value="L">L - Low</option>
+                <option value="M" selected>M - Medium</option>
+                <option value="Q">Q - Quartile</option>
+                <option value="H">H - High</option>
+            </select>
+            <div class="buttons">
+                <button onclick="generateQRCode()">Generate QR Code</button>
+                <button onclick="addField()">Add New Field</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
